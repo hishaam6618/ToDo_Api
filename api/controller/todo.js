@@ -1,6 +1,7 @@
 const ToDoItem = require("../models/todo_item");
 const mongoose = require("mongoose");
-const apiUrl = "http://localhost:3000";
+// const apiUrl = "http://localhost:3000";
+const apiUrl = "https://ill-flip-flops-tick.cyclic.app";
 
 exports.get_all_item = (req, res, next) => {
   ToDoItem.find()
@@ -21,7 +22,7 @@ exports.get_all_item = (req, res, next) => {
               request: {
                 type: "GET",
                 inf: "to get item by Id",
-                url: "/toDoApi/" + doc.id,
+                url: apiUrl + "/toDoApi/" + doc.id,
               },
             };
           }),
@@ -63,9 +64,9 @@ exports.create_item = (req, res, next) => {
           date: result.date,
           stautus: result.stautus,
           request: {
-            type: "GET",
-            inf: "to get item by Id",
-            url: "/toDoApi/" + result.id,
+            type: "DELETE",
+            inf: "to delete item by Id",
+            url: apiUrl + "/toDoApi/" + result.id,
           },
         },
       });
@@ -89,10 +90,9 @@ exports.find_item_byId = (req, res, next) => {
         res.status(200).json({
           item: doc,
           request: {
-            type: "GET",
-            // description: "GET All Prouduct ",
-            inf: "GET All Prouduct item",
-            url: "/toDoApi",
+            type: "PATCH",
+            inf: " to  update item",
+            url: apiUrl + "/toDoApi/" + id,
           },
         });
       } else {
@@ -111,9 +111,7 @@ exports.find_item_byId = (req, res, next) => {
 exports.update_item = (req, res, next) => {
   const id = req.params.itemId;
   const updateOps = {};
-  //   for (const ops of req.body) {
-  //     updateOps[ops.propName] = ops.value;
-  //   }
+
   console.log(id);
   ToDoItem.findByIdAndUpdate(
     { _id: id },
@@ -166,7 +164,7 @@ exports.delete_item = (req, res, next) => {
             type: "POST",
             description: "POST to add new Item ",
 
-            url: "/toDoApi",
+            url: apiUrl + "/toDoApi",
           },
         });
       } else {
