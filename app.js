@@ -9,10 +9,10 @@ const fs = require("node:fs");
 /////
 const toDoRoutes = require("./api/routes/todo");
 
-mongoose.connect(
-  `mongodb+srv://hisham6618:70sWsp2LVtXLKRcd@todoapi.e4zcdi3.mongodb.net/api?retryWrites=true&w=majority`
-);
-// mongoose.connect("mongodb://localhost:27017/rest_api");
+// mongoose.connect(
+//   `mongodb+srv://hisham6618:70sWsp2LVtXLKRcd@todoapi.e4zcdi3.mongodb.net/api?retryWrites=true&w=majority`
+// );
+mongoose.connect("mongodb://localhost:27017/rest_api");
 
 mongoose.Promise = global.Promise;
 app.use(morgan("dev"));
@@ -39,7 +39,7 @@ app.use("/toDoApi", toDoRoutes);
 
 app.use((req, res, next) => {
   ///1
-  res.writeHead(200, { "Contetent-Type": "text/html" });
+  // res.writeHead(200, { "Contetent-Type": "text/html" });
   fs.createReadStream(__dirname + "/home/index.html").pipe(res);
   ///2
   // const html = fs.readFileSync(__dirname + "/api/index.html", "utf-8");
