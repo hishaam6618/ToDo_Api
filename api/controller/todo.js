@@ -56,7 +56,7 @@ exports.create_item = (req, res, next) => {
       // console.log(result);
       res.status(201).json({
         message: "Created Itime successfully",
-        createdtem: {
+        item: {
           _id: result.id,
           title: result.title,
           description: result.description,
@@ -88,6 +88,7 @@ exports.find_item_byId = (req, res, next) => {
       if (doc) {
         res.status(200).json({
           item: doc,
+
           request: {
             type: "PATCH",
             inf: " to  update item",
@@ -118,7 +119,6 @@ exports.update_item = (req, res, next) => {
       $set: {
         title: req.body.title,
         description: req.body.description,
-        date: req.body.date,
         stautus: req.body.stautus,
       },
     },
@@ -128,7 +128,7 @@ exports.update_item = (req, res, next) => {
     .then((result) => {
       //   console.log(result);
       res.status(200).json({
-        updateItem: {
+        item: {
           _id: result.id,
           title: result.title,
           description: result.description,
