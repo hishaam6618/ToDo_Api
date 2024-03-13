@@ -8,7 +8,6 @@ exports.get_all_item = (req, res, next) => {
     .select("title description _id date stautus")
     .exec()
     .then((docs) => {
-      // console.log(doc);
       if (docs.length > 0) {
         const response = {
           count: docs.length,
@@ -22,7 +21,7 @@ exports.get_all_item = (req, res, next) => {
               request: {
                 type: "GET",
                 inf: "to get item by Id",
-                url: apiUrl + "/toDoApi/" + doc.id,
+                url: process.env.API_URL + "/toDoApi/" + doc.id,
               },
             };
           }),
