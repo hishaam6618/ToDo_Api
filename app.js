@@ -38,10 +38,10 @@ app.use("/toDoApi", toDoRoutes);
 
 app.use((req, res, next) => {
   ///1
-  fs.createReadStream("./api/index.html").pipe(res);
+  // fs.createReadStream("./api/index.html").pipe(res);
   ///2
-  // const html = fs.readFileSync("./api/index.html", "utf-8");
-  // res.status(200).end(html);
+  const html = fs.readFileSync("./api/index.html", "utf-8");
+  res.status(200).end(html);
   ///3
   // const error = new Error("Not Found");
   // error.status = 404;
