@@ -1,7 +1,66 @@
 
    
-    Todo Api
+    <!-- Todo Api
     <h1>Todo Api</h1>
     <h2>welcam</h2>
-    <h2>  <style ></style> <a href="/todoapi"  >start</a> </h2>
+    <h2>  <style ></style> <a href="/todoapi"  >start</a> </h2> -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo API Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Todo API Documentation</h1>
+    </header>
+    <div class="container">
+        <section>
+            <h2>GET /todos</h2>
+            <p>Retrieves a list of all todos.</p>
+            <h3>Parameters</h3>
+            <ul>
+                <li><strong>None</strong></li>
+            </ul>
+            <h3>Response</h3>
+            <pre>
+{
+    "todos": [
+        {
+            "id": 1,
+            "title": "Example Todo 1",
+            "completed": false
+        },
+        {
+            "id": 2,
+            "title": "Example Todo 2",
+            "completed": true
+        }
+    ]
+}
+            </pre>
+        </section>
+        <section>
+            <h2>POST /todos</h2>
+            <p>Creates a new todo.</p>
+            <h3>Parameters</h3>
+            <ul>
+                <li><strong>title</strong> (string): The title of the todo.</li>
+            </ul>
+            <h3>Response</h3>
+            <pre>
+{
+    "id": 3,
+    "title": "New Todo",
+    "completed": false
+}
+            </pre>
+        </section>
+        <!-- Add more sections for other API methods as needed -->
+    </div>
+</body>
+</html>
+
   
