@@ -4,6 +4,7 @@ const app = exprss();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const fs = require("node:fs");
 
 /////
 const toDoRoutes = require("./api/routes/todo");
@@ -36,9 +37,15 @@ app.use((req, res, next) => {
 app.use("/toDoApi", toDoRoutes);
 
 app.use((req, res, next) => {
-  const error = new Error("Not Found");
-  error.status = 404;
-  next(error);
+  ///1
+  fs.createReadStream("./api/index.html").pipe(res);
+  ///2
+  // const html = fs.readFileSync("./api/index.html", "utf-8");
+  // res.status(200).end(html);
+  ///3
+  // const error = new Error("Not Found");
+  // error.status = 404;
+  // next(res.status(200).json(response));
 });
 app.use((error, req, res, next) => {
   res.status(error.status || 500);
