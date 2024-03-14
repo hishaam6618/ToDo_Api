@@ -36,41 +36,27 @@
             "title": " Todo 1",
             "description": "Example Todo 1",
             stautus:"pending"
+            "date": "2014-12-02T21:00:00.000Z",
         },
         {
             "_id": "65ef996706948e4c89f5059d",
             "title": " Todo 2",
             "description": "Example Todo 2",
             stautus:"completed"
+            "date": "2014-12-02T21:00:00.000Z",
         },
         {
             "_id": "65ef9bc250dd71a4e2d04643",
             "title": " Todo 3",
             "description": "Example Todo 3",
             stautus:"canceled"
+            "date": "2014-12-02T21:00:00.000Z",
         }
           ]
             
             </pre>
         </section>
-        <section>
-            <h2> GET  /todoapi/$itemId</h2>
-            <p>Find a todo by Id.</p>
-            <h3>Parameters in url</h3>
-            <ul>
-                <li><strong>itemId</strong> (string): The id of the todo.</li>
-                
-            </ul>
-            <h3>Response</h3>
-            <pre>
-               "item": {
-                    "_id": "65ef9bc250dd71a4e2d04643",
-                    "title": " Todo 3",
-                    "description": "Example Todo 3",
-                    stautus:"canceled"
-                }
-            </pre>
-        </section>
+      
         <section>
             <h2>POST /todoapi</h2>
             <p>Creates a new todo.</p>
@@ -122,6 +108,25 @@
             <pre>
                 {
                     message: "item delete",
+                }
+            </pre>
+        </section>
+        <section>
+            <h2> GET  /todoapi/$itemId</h2>
+            <p>Find a todo by Id.</p>
+            <h3>Parameters in url</h3>
+            <ul>
+                <li><strong>itemId</strong> (string): The id of the todo.</li>
+                
+            </ul>
+            <h3>Response</h3>
+            <pre>
+               "item": {
+                    "_id": "65ef9bc250dd71a4e2d04643",
+                    "title": " Todo 3",
+                    "description": "Example Todo 3",
+                    stautus:"canceled"
+                    "date": "2014-12-02T21:00:00.000Z",
                 }
             </pre>
         </section>
