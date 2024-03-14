@@ -9,10 +9,10 @@ const fs = require("node:fs");
 /////
 const toDoRoutes = require("./api/routes/todo");
 
-// mongoose.connect(
-//   `mongodb+srv://hisham6618:70sWsp2LVtXLKRcd@todoapi.e4zcdi3.mongodb.net/api?retryWrites=true&w=majority`
-// );
-mongoose.connect("mongodb://localhost:27017/rest_api");
+mongoose.connect(
+  `mongodb+srv://hisham6618:70sWsp2LVtXLKRcd@todoapi.e4zcdi3.mongodb.net/api?retryWrites=true&w=majority`
+);
+// mongoose.connect("mongodb://localhost:27017/rest_api");
 
 mongoose.Promise = global.Promise;
 app.use(morgan("dev"));
