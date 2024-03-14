@@ -10,20 +10,6 @@ header {
     text-align: center;
     padding: 20px 0;
 }
-.creator-info {
-    margin-top: 10px;
-}
-
-.creator-info p {
-    margin: 5px 0;
-    font-size: 16px;
-}
-
-.creator-info i {
-    margin-left: 5px;
-    font-size: 16px;
-    color: #007bff;
-}
 
 .container {
     max-width: 800px;
@@ -63,5 +49,38 @@ pre {
 pre code {
     font-family: Consolas, monospace;
 }
+.creator-info {
+    margin-top: 10px;
+}
+
+.creator-info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.creator-info i {
+    margin-left: 5px;
+    font-size: 16px;
+    color: #007bff;
+}
+.creator-info  a{
+    transition: color 0.3s ease;
+    margin-left: 5px;
+    font-size: 16px;
+    color: gainsboro;
+    
+    text-decoration: none;
+  
+}
+.creator-info  a:hover{
+    margin-left: 5px;
+    font-size: 17px;
+    color: darkblue;
+    
+    text-decoration: none; 
+}
+
+
+
 
 
